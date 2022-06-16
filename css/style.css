@@ -1,0 +1,928 @@
+:root {
+    --primary-color: #0065FC;
+    --second-color: #F2F2F2;
+    --troisieme-color: #DEEBFF;
+    --marge-mobile-section: 0px 20px 0 20px;
+    --marge-tablette-section: 0px 10px 0 10px;
+    --marge-tablette-section-activite: 0px 25px 0 25px
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+#wrapper {
+    max-width: 1330px;
+    margin: 0 auto;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /*j'ai enlevé paddin-left 50px et right */
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+header nav {
+    display: flex;
+}
+
+header nav>a {
+    /* à l'intérieur de nav*/
+    padding: 20px 30px;
+    border-top: 5px solid transparent;
+    color: black;
+
+}
+
+header nav>a:hover {
+    border-top-color: var(--primary-color);
+    color: var(--primary-color);
+
+}
+
+.liste-hebergements {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.hebergement {
+    width: 31.33%;
+}
+
+.texte-bleu {
+    color: var(--primary-color);
+}
+
+.texte-gris {
+    color: grey;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* barre de recherche*/
+button {
+    color: var(--second-color);
+    background: var(--primary-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0px 10px 0 10px;
+    border: none;
+    justify-content: space-between;
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+
+}
+
+.fa-search {
+    opacity: 0;
+}
+
+form {
+    display: flex;
+    margin-bottom: 25px;
+   
+}
+
+input[type="search"] {
+    border: 1px solid #edeaea;
+    padding: 0px 10px 0 10px;
+    font-size: 16px;
+}
+
+.box div {
+    background-color: var(--second-color);
+    width: 20px;
+    height: 45px;
+    padding: 2px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #0050c7;
+    
+}
+
+
+/*filtres*/
+
+.filtres {
+    /*principale*/
+    display: flex;
+    align-items: center;
+}
+
+.filtres h2 {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.filtre {
+
+    border-radius: 25px;
+    background-color: #fffffff3;
+    display: flex;
+    margin-right: 20px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border: 1px solid var(--second-color);
+    border-left: transparent;
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.filtre:hover {
+    background-color: #deebff;
+    transition: all 200ms;
+    transition: 0.5s ease-in-out;
+}
+
+.filtre:hover .rondicon {
+    background-color: var(--primary-color);
+    transition: 0.5s ease-in-out;
+}
+
+.filtre:hover .rondicon i {
+    color: white;
+    
+}
+
+
+
+.rondicon {
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    color: var(--primary-color);
+    background-color: #deebff;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    margin-right: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.filtres p {
+    margin-right: 20px;
+    font-weight: bold
+}
+
+.iconinformation {
+    border: var(--second-color) solid 1px;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    color: var(--primary-color);
+
+    background-color: rgb(255, 255, 255);
+    margin-right: 10px;
+    text-align: center;
+}
+
+span {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/*hebergements à Marseille*/
+
+#hebergements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.hebergementscard h2 {
+    display: flex;
+    margin-left: 15px;
+}
+
+.hebergementscard {
+    border: 10px;
+    border-radius: 25px;
+    padding: 25px;
+    width: 65%;
+    box-sizing: border-box;
+    background-color: var(--second-color);
+   
+}
+.hebergement{
+    transition: 0.4s ease-in-out;
+}
+.card-image {
+    background-color: white;
+    border-radius: 25px;
+    padding: 2%;
+    margin-bottom: 30px;
+    margin-right: 5px; 
+    
+}
+
+.card-image img {
+
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hebergement-contenu {
+    margin-left: 15px;
+    margin-top: -15px;
+    text-decoration: none;
+}
+
+.hebergement p {
+    margin-top: -15px;
+    color: black;
+}
+
+.hebergement h3 {
+    color: black;
+}
+
+.Afficher-plus {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    margin-inline-end: auto;
+    /*à revoir */
+    margin-left: 10px;
+}
+
+/*animations hebergement*/
+.hebergement:hover{
+    cursor: pointer;
+   transform: scale(1.05);
+    transition: 0.4s;
+   
+}
+
+
+
+/*les plus populaires */
+
+.titrepopulaire {
+    margin-left: 30px;
+}
+
+.populaires {
+    background-color: rgb(245, 244, 244);
+    border-radius: 25px;
+    padding: 5px;
+    width: 31.33%;
+    box-sizing: border-box;
+}
+
+.titreetstar {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+
+.card-image-populaire {
+
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+    border-radius: 25px;
+    margin-right: 30px;
+    margin-left: 30px;
+    display: flex;
+    color: black;
+    transition: 0.4s ease-in-out;
+}
+
+.card-image-populaire img {
+    border-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 35%;
+    object-fit: cover;
+    padding: 2%;
+    margin-bottom: 1px;
+}
+
+
+.hebergement-contenu-populaire {
+    margin-left: 10px;
+}
+
+.card-image-populaire .hebergement-contenu {
+    display: flex;
+}
+
+/*transition populaire*/
+.card-image-populaire:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+     transition: 0.4s ;
+}
+/*activités à Marseille*/
+
+
+#activites {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.activites {
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+}
+#activites h2{
+   margin-left: 35px;
+}
+.activite-1 {
+    width: 22%;
+    border: 1px solid var(--second-color);
+    padding: 1px;
+    box-shadow: 5px 5px 5px 1px var(--second-color);
+    border-radius: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.image-vieux-port img {
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.titre-activite {
+    padding: 0px 0 0px 10px;
+    margin-top: -10px;
+    margin-bottom: -20px;
+}
+
+
+.titre-activite h3 {
+    margin: 15px 0 0px 5px;
+    color: black;
+}
+
+
+.activite-2 {
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 1px;
+    box-shadow: 5px 5px 5px 1px var(--second-color);
+    border-radius: 15px;
+    margin-bottom: 50px;
+    transition: 0.4s ease-in-out;
+}
+
+
+.image-fort img {
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.activite-3 {
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 1px;
+    box-shadow: 5px 5px 5px 1px var(--second-color);
+    border-radius: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.image-iles img {
+
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.colone {
+    width: 22%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.activite-4 {
+    width: 22%;
+    border: 1px solid var(--second-color);
+    padding: 1px;
+    box-shadow: 5px 5px 5px 1px var(--second-color);
+    border-radius: 15px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.activite-4 img {
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+
+.activite-5 {
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 1px;
+    box-shadow: 5px 5px 5px 1px var(--second-color);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    transition: 0.4s ease-in-out;
+    
+}
+
+.activite-5 img {
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;;
+}
+
+.activite-6 {
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 1px;
+    box-shadow: 5px 5px 5px 1px var(--second-color);
+    border-radius: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.activite-6 img {
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*transition activite*/ 
+.activite-1:hover{
+    cursor: pointer;
+   transform: scale(1.05);
+    transition: 0.4s ;
+}
+.activite-2:hover{
+    cursor: pointer;
+   transform: scale(1.05);
+    transition: 0.4s ;
+}
+.activite-3:hover{
+    cursor: pointer;
+   transform: scale(1.05);
+    transition: 0.4s ;
+}
+.activite-4:hover{
+    cursor: pointer;
+   transform: scale(1.05);
+   transition: 0.4s ease-in-out;
+}
+
+.activite-5:hover{
+    cursor: pointer;
+   transform: scale(1.05);
+    transition: 0.4s ;
+}
+.activite-6:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.4s ;
+}
+
+
+/*Footer*/
+
+footer {
+    background-color: var(--second-color);
+    margin-top: 30px;
+}
+
+.footer {
+    margin-top: 75px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1330px;
+    margin: 0 auto;
+}
+
+
+
+footer ul {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+}
+
+.footer-titre {
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding-right: 50px;
+}
+
+footer li {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 0px;
+    float: initial;
+}
+
+.footer a {
+    color: black;
+}
+
+/*media*/
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #recherche {
+        padding: var(--marge-mobile-section);
+    }
+
+    .logo-booki {
+        margin-left: 10%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+    }
+
+    header nav {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    header nav>a {
+        font-weight: bold;
+        text-align: center;
+        padding: 10px 30px;
+        width: 50%;
+        border-top: 0;
+        border-bottom: 5px solid var(--second-color);
+    }
+
+    header nav>a:hover {
+        border-bottom-color: var(--primary-color);
+    }
+
+    .textdebut {
+        padding: var(--marge-mobile-section);
+    }
+
+    input[type="search"] {
+        width: 100%;
+    }
+
+
+    form {
+        padding: var(--marge-mobile-section);
+    }
+
+    .box div {
+        background-color: var(--second-color);
+    }
+
+    button span {
+        display: none;
+    }
+
+    .fa-search {
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+    }
+
+    button {
+        border-radius: 10px;
+        padding: 10px 15px;
+    }
+
+    span {
+        padding: var(--marge-mobile-section);
+    }
+
+    .textdebut {
+        padding-top: 10px;
+    }
+
+    .filtre {
+        margin-bottom: 15px;
+    }
+
+    .filtres {
+        display: flex;
+        flex-wrap: wrap;
+        padding: var(--marge-mobile-section);
+    }
+
+    .filtres h2 {
+        width: 100%;
+    }
+
+    #hebergements {
+        width: 100%;
+        border-radius: 80px;
+        flex-direction: column-reverse;
+    }
+
+    .hebergementscard {
+        width: 100%;
+        background-color: white;
+    }
+
+
+    .populaires {
+        width: 100%;
+        margin-top: 30px;
+        border-radius: 0;
+        background-color: var(--second-color);
+    }
+
+    .card-image-populaire {
+        height: 200px;
+        box-shadow: 5px 5px 5px 1px var(--second-color);
+    }
+
+    .card-image-populaire img {
+        padding: 5px;
+    }
+
+    .hebergement {
+        width: 100%;
+    }
+
+    .card-image {
+        padding: 5px;
+        box-shadow: 5px 5px 5px 1px var(--second-color);
+    }
+
+    #activites {
+        justify-content: space-between;
+        display: flex;
+        padding: var(--marge-mobile-section);
+    }
+
+    .activites {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #activites h2 {
+        padding: var(--marge-mobile-section);
+    }
+
+    .activite-1 {
+        width: 95%;
+        margin-bottom: 50px;
+    }
+
+    .titre-activite h3 {
+        padding: 10px 0 25px 10px;
+    }
+
+    .image-vieux-port img {
+        height: 150px;
+    }
+
+    .activite-2 {
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .image-fort img {
+        height: 150px;
+    }
+
+    .activite-3 {
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .colone {
+        width: 95%;
+    }
+
+    .activite-4 {
+        width: 95%;
+        margin-bottom: 50px;
+    }
+
+    .image-4 img {
+        height: 150px;
+    }
+    
+    footer{
+        padding: var(--marge-mobile-section);
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--second-color);
+        padding: var(--marge-mobile-section);
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+    body {
+        width: 100%;
+        margin: auto;
+
+    }
+
+    button span {
+        display: none;
+    }
+
+    .fa-search {
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+
+    }
+
+    button {
+
+        padding: 10px 15px;
+
+    }
+
+    #recherche {
+        padding: var(--marge-tablette-section);
+    }
+
+    .hebergements {
+        flex-direction: column-reverse;
+    }
+
+    #hebergements {
+        flex-direction: column-reverse;
+        padding: var(--marge-tablette-section);
+        align-content: center;
+    }
+
+    .hebergementscard {
+        width: 98%;
+        border-radius: 0px 0 25px 25px;
+
+    }
+
+    .populaires {
+        width: 98%;
+        border-radius: 25px 25px 0px 0px;
+        padding: var(--marge-tablette-section);
+    }
+
+    .card-image-populaire img {
+        width: 25%;
+        padding: 0.5%;
+        height: 130px;
+    }
+    #activites {
+
+        padding: var(--marge-tablette-section-activite);
+        margin-top: 30px;
+    }
+
+    #activites h2 {
+        padding: var(--marge-tablette-section);
+    }
+
+    .activites {
+        width: 99%;
+
+    }
+
+    .titre-activite h3 {
+        font-size: 16px;
+    }
+
+    
+    .footer {
+        width: 95%;
+
+    }
+}
+
+/*logo de chargement de la page*/
+.loader{
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: 16px solid #bdc3c7;
+    width: 120px;
+    height: 120px;
+    border-top-color: #9cbc1a;
+    border-bottom-color: #3498db;
+    border-radius: 50%;
+    animation: chargeur 4s linear infinite;
+}
+.loader-content{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--troisieme-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: loader-content 6s ;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes chargeur {
+    0%{
+        transform: rotate(0deg) scale(1);
+        border-top-color: red;
+        border-bottom-color: red;
+    }
+    25%{
+        border-top-color: blue;
+        border-bottom-color: blue;
+    }
+    50%{
+        transform: rotate(360deg) scale(1.15s);
+        border-top-color: pink;
+        border-bottom-color: pink;
+    }
+    75%{
+        border-top-color: green;
+        border-bottom-color: green;
+    }
+    100%{
+        transform: rotate(720deg) scale(1);
+        border-top-color: yellow;
+        border-bottom-color: yellow;
+    }
+}
+
+@keyframes loader-content {
+    0%{
+        opacity: 1;
+        z-index: 9999;
+    }
+    90%{
+        opacity: 1;
+    }
+    99%{
+        z-index: 9999;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
